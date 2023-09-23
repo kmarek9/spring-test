@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoanCalculator {
     public static double calculateFixedInstallment(double loanAmount, double oprocentowanie, int liczbaRat) {
-        double qPerMonth = 1 + (oprocentowanie / 12);
-        return (loanAmount * oprocentowanie) / (12 * (1 - Math.pow(qPerMonth, -liczbaRat)));
+        double w = 1 + (oprocentowanie / 12);
+        return (loanAmount * oprocentowanie) / (12 * (1 - Math.pow(w, -liczbaRat)));
     }
 }
